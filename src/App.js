@@ -1,15 +1,25 @@
-import React, { Component } from 'react';
-import './App.css';
+// App.js
+import React, { useState } from 'react';
+import UploadForm from './components/UploadForm';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <h1>A React app</h1>
-        <p>Edit <code>src/App.js</code>, save and reload.</p>
-      </div>
-    );
-  }
-}
+const App = () => {
+  const [error, setError] = useState(null);
+
+  const handleUpload = async (file) => {
+    try {
+      setError(null);
+    } catch (err) {
+      setError(err);
+    }
+  };
+
+  return (
+    <div>
+      <h1>Badge Checker</h1>
+      <UploadForm onUpload={handleUpload} />
+      {error && <p>{error}</p>}
+    </div>
+  );
+};
 
 export default App;

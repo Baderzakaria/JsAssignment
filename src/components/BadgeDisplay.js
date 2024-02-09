@@ -1,16 +1,14 @@
 import React from 'react';
 
-const BadgeDisplay = ({ imageUrl, isValid }) => {
-  return (
+const BadgeDisplay = ({ imageUrl, isValid }) => (
     <div>
       <h2>Badge Preview</h2>
-      {isValid ? (
-        <img src={imageUrl} alt="Badge" style={{ maxWidth: '100%', maxHeight: '200px' }} />
-      ) : (
-        <p>Sorry, the badge image does not meet the requirements.</p>
+      {imageUrl && (
+        <div>
+          <img src={imageUrl} alt="Badge" style={{ maxWidth: '100%', maxHeight: '200px' }} />
+        </div>
       )}
     </div>
-  );
-};
+);
 
 export default BadgeDisplay;

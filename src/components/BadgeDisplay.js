@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BadgeDisplay = ({ imageUrl, isValid }) => (
+const BadgeDisplay = ({ imageUrl }) => (
     <div>
       <h2>Badge Preview</h2>
       {imageUrl && (
